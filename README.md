@@ -1,0 +1,1 @@
+# Action close PR with label
