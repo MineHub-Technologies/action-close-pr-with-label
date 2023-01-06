@@ -3,8 +3,12 @@ import * as github from "@actions/github";
 import * as errors from "./errors";
 
 export const run = async () => {
+  core.debug('Running');
+
   const context = github.context;
-  core.info('context.issue', context.issue);
+  core.debug('context.issue', context);
+  core.debug('context.issue', context.issue.owner);
+  core.debug('context.issue', context.issue.number);
   // if (context.eventName !== "pull_request_target") {
   //   throw errors.ignoreEvent;
   // }
