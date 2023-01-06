@@ -1,0 +1,38 @@
+{
+  "name": "close-pull-request",
+  "version": "1.0.0",
+  "description": "A GitHub Action to automatically close a pull requests.",
+  "private": true,
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest --collect-coverage",
+    "lint": "eslint --fix src/**/*.js tests/**/*.js",
+    "build": "babel src -d lib && ncc build",
+    "precommit": "npm run build"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@actions/github": "^2.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.2",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "@vercel/ncc": "^0.33.3",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^26.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1"
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "precommit"
+    }
+  }
+}
